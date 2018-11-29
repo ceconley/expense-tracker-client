@@ -3,7 +3,7 @@ const store = require('./store.js')
 
 const showExpense = () =>
   $.ajax({
-    url: config.apiUrl + '/expenses/' + store.expenseId,
+    url: config.apiUrl + '/expenses/' + $('#show-id').val(),
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -18,19 +18,18 @@ const indexExpense = () =>
     }
   })
 
-const destroyExpense = (data) =>
+const destroyExpense = () =>
   $.ajax({
-    url: config.apiUrl + '/expenses/' + store.expenseId,
+    url: config.apiUrl + '/expenses/' + $('#destroy-id').val(),
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 
 const updateExpense = (data) =>
   $.ajax({
-    url: config.apiUrl + '/expenses/' + store.expenseId,
+    url: config.apiUrl + '/expenses/' + $('#update-id').val(),
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -42,6 +41,9 @@ const createExpense = (data) =>
   $.ajax({
     url: config.apiUrl + '/expenses',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 

@@ -25,14 +25,13 @@ const changePassword = (data) =>
     data
   })
 
-const signOut = (data) =>
+const signOut = () =>
   $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 
 module.exports = {
