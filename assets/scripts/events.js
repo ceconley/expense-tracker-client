@@ -1,20 +1,20 @@
-const getFormFields = require('../../lib/get-form-fields.js')
+// const getFormFields = require('../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('./store.js')
 
 const onShowExpense = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.showExpense(data)
+  // const dataString = getFormFields(event.target)
+  // const data = parseInt(dataString)
+  // console.log(data)
+  api.showExpense()
     .then(ui.onShowSuccess)
     .catch(ui.onShowFailure)
 }
 const onIndexExpense = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
-  api.indexExpense(data)
+  api.indexExpense()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
 }

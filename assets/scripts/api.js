@@ -1,7 +1,7 @@
 const config = require('./config')
 const store = require('./store.js')
 
-const showExpense = () =>
+const showExpense = (data) =>
   $.ajax({
     url: config.apiUrl + '/expenses/' + $('#show-id').val(),
     method: 'GET',

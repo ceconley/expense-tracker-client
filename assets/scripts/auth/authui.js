@@ -15,7 +15,6 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  console.log(data)
   store.user = data.user
   $('#authMessage').html('Signed In Successfully')
   $('#sign-in')[0].reset()
