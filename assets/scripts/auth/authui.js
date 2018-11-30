@@ -2,6 +2,11 @@ const store = require('../store.js')
 
 $('#change-password').hide()
 $('#sign-out').hide()
+$('#show-expense').hide()
+$('#index-expense').hide()
+$('#create-expense').hide()
+$('#destroy-expense').hide()
+$('#update-expense').hide()
 
 const resetAuthForms = () => {
   $('#sign-up')[0].reset()
@@ -27,6 +32,11 @@ const signInSuccess = function (data) {
   $('#sign-up').hide()
   $('#change-password').show()
   $('#sign-out').show()
+  $('#show-expense').show()
+  $('#index-expense').show()
+  $('#create-expense').show()
+  $('#destroy-expense').show()
+  $('#update-expense').show()
 }
 
 const signInFailure = function () {
@@ -53,6 +63,11 @@ const signOutSuccess = function () {
   $('#sign-up').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('#show-expense').hide()
+  $('#index-expense').hide()
+  $('#create-expense').hide()
+  $('#destroy-expense').hide()
+  $('#update-expense').hide()
 }
 
 const signOutFailure = function () {

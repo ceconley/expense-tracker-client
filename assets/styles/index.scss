@@ -1,1 +1,68 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background: #b2d9c5;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #505050;
+}
+
+.buttons {
+  background: #49796b;
+  color: white;
+}
+
+.forms {
+  background: #1fab89;
+  width: 130px;
+  font-size: 10pt;
+}
+
+form {
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+::placeholder {
+  color: white;
+}
+
+#signInDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#authMessage {
+  margin: 20px;
+}
+
+// #signOutDiv {
+//   display: flex;
+// }
+
+// #showExpenseDiv {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 50px;
+// }
+
+#results {
+  margin-top: 50px;
+}
+
+// #create-expense {
+//   margin-top: 50px;
+// }
+//
+// #updatdeExpenseDiv {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 50px;
+// }
+
+// #bodyDiv {
+//   display: flex;
+// }
