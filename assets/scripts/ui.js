@@ -1,10 +1,11 @@
+
 const resetForms = () => {
   $('#show-expense')[0].reset()
   $('#index-expense')[0].reset()
   $('#create-expense')[0].reset()
   $('#destroy-expense')[0].reset()
   $('#update-expense')[0].reset()
-  $('#results')[0].reset()
+  $('#results').html('')
 }
 
 const onShowSuccess = (response) => {
@@ -32,7 +33,7 @@ const onIndexSuccess = (response) => {
       <p>Category: ${expense.category}</p>
       <p>Description: ${expense.description}</p>
       `)
-    $('#results').append(expenseHTML)
+    $('#results').html(expenseHTML)
   })
 }
 const onIndexFailure = () => {
@@ -56,12 +57,12 @@ const onUpdateFailure = () => {
   $('#results').html('Update Expense Failed')
 }
 const onCreateSuccess = (data) => {
-  resetForms()
   $('#results').html('Expense Created')
+  resetForms()
 }
 const onCreateFailure = () => {
-  resetForms()
   $('#results').html('Create Expense Failed')
+  resetForms()
 }
 
 module.exports = {

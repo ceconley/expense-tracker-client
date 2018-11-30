@@ -1,13 +1,9 @@
-// const getFormFields = require('../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('./store.js')
 
 const onShowExpense = (event) => {
   event.preventDefault()
-  // const dataString = getFormFields(event.target)
-  // const data = parseInt(dataString)
-  // console.log(data)
   api.showExpense()
     .then(ui.onShowSuccess)
     .catch(ui.onShowFailure)
@@ -38,7 +34,6 @@ const onUpdateExpense = (event) => {
   const data = {
     expense: updateExpenseData
   }
-  console.log(data)
   api.updateExpense(data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
@@ -57,7 +52,6 @@ const onCreateExpense = (event) => {
   const data = {
     expense: createExpenseData
   }
-  console.log(data)
   api.createExpense(data)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)

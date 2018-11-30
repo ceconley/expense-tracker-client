@@ -48,6 +48,7 @@ const signOutSuccess = function () {
   $('#authMessage').html('Signed Out Successfully')
   store.user = null
   resetAuthForms()
+  $('#results').html('')
   $('#sign-in').show()
   $('#sign-up').show()
   $('#change-password').hide()
