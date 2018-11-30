@@ -3,22 +3,26 @@ const store = require('../store.js')
 $('#change-password').hide()
 $('#sign-out').hide()
 
-const signUpSuccess = function () {
-  $('#authMessage').html('Signed Up Successfully')
+const resetAuthForms = () => {
   $('#sign-up')[0].reset()
   $('#sign-in')[0].reset()
+  $('#change-password')[0].reset()
+}
+
+const signUpSuccess = () => {
+  $('#authMessage').html('Signed Up Successfully')
+  resetAuthForms()
 }
 
 const signUpFailure = function () {
   $('#authMessage').html('Signed Up Failed')
-  $('#sign-up')[0].reset()
+  resetAuthForms()
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
   $('#authMessage').html('Signed In Successfully')
-  $('#sign-in')[0].reset()
-  $('#sign-up')[0].reset()
+  resetAuthForms()
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#change-password').show()
@@ -27,22 +31,23 @@ const signInSuccess = function (data) {
 
 const signInFailure = function () {
   $('#authMessage').html('Signed In Failed')
-  $('#sign-in')[0].reset()
+  resetAuthForms()
 }
 
 const changePasswordSuccess = function () {
   $('#authMessage').html('Password changed successfully')
-  $('#change-password')[0].reset()
+  resetAuthForms()
 }
 
 const changePasswordFailure = function () {
   $('#authMessage').html('Error on password change')
-  $('#change-password')[0].reset()
+  resetAuthForms()
 }
 
 const signOutSuccess = function () {
   $('#authMessage').html('Signed Out Successfully')
   store.user = null
+  resetAuthForms()
   $('#sign-in').show()
   $('#sign-up').show()
   $('#change-password').hide()
@@ -50,6 +55,7 @@ const signOutSuccess = function () {
 }
 
 const signOutFailure = function () {
+  resetAuthForms()
   $('#authMessage').html('Signed Out Failed')
 }
 
