@@ -17,7 +17,7 @@ const onShowSuccess = (response) => {
     <p>Category: ${response.expense.category}</p>
     <p>Description: ${response.expense.description}</p>
     `)
-  $('#results').append(expenseHTML)
+  $('#results').html(expenseHTML)
 }
 const onShowFailure = () => {
   resetForms()
@@ -33,7 +33,7 @@ const onIndexSuccess = (response) => {
       <p>Category: ${expense.category}</p>
       <p>Description: ${expense.description}</p>
       `)
-    $('#results').html(expenseHTML)
+    $('#results').append(expenseHTML)
   })
 }
 const onIndexFailure = () => {

@@ -15,18 +15,18 @@ const resetAuthForms = () => {
 }
 
 const signUpSuccess = () => {
-  $('#authMessage').html('Signed Up Successfully')
+  $('.authMessage').html('Signed Up Successfully')
   resetAuthForms()
 }
 
 const signUpFailure = function () {
-  $('#authMessage').html('Signed Up Failed')
+  $('.authMessage').html('Signed Up Failed')
   resetAuthForms()
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
-  $('#authMessage').html('Signed In Successfully')
+  $('.authMessage').html('Signed In Successfully')
   resetAuthForms()
   $('#sign-in').hide()
   $('#sign-up').hide()
@@ -40,22 +40,22 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
-  $('#authMessage').html('Signed In Failed')
+  $('.authMessage').html('Signed In Failed')
   resetAuthForms()
 }
 
 const changePasswordSuccess = function () {
-  $('#authMessage').html('Password changed successfully')
+  $('.authMessage').html('Password changed successfully')
   resetAuthForms()
 }
 
 const changePasswordFailure = function () {
-  $('#authMessage').html('Error on password change')
+  $('.authMessage').html('Error on password change')
   resetAuthForms()
 }
 
 const signOutSuccess = function () {
-  $('#authMessage').html('Signed Out Successfully')
+  $('.authMessage').html('Signed Out Successfully')
   store.user = null
   resetAuthForms()
   $('#results').html('')
@@ -72,7 +72,7 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   resetAuthForms()
-  $('#authMessage').html('Signed Out Failed')
+  $('.authMessage').html('Signed Out Failed')
 }
 
 module.exports = {
