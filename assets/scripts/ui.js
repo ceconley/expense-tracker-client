@@ -19,10 +19,12 @@ const onShowSuccess = (response) => {
     `)
   $('#results').html(expenseHTML)
 }
+
 const onShowFailure = () => {
   resetForms()
   $('#results').html('Show Expense Failed')
 }
+
 const onIndexSuccess = (response) => {
   resetForms()
   response.expenses.forEach(expense => {
@@ -36,30 +38,37 @@ const onIndexSuccess = (response) => {
     $('#results').append(expenseHTML)
   })
 }
+
 const onIndexFailure = () => {
   resetForms()
   $('#results').html('Show All Expenses Failed')
 }
+
 const onDestroySuccess = () => {
   resetForms()
   $('#results').html('Expense Deleted')
 }
+
 const onDestroyFailure = () => {
   resetForms()
   $('#results').html('Delete Expense Failed')
 }
+
 const onUpdateSuccess = () => {
   resetForms()
   $('#results').html('Expense Updated')
 }
+
 const onUpdateFailure = () => {
   resetForms()
   $('#results').html('Update Expense Failed')
 }
+
 const onCreateSuccess = (data) => {
   $('#results').html('Expense Created')
   resetForms()
 }
+
 const onCreateFailure = () => {
   $('#results').html('Create Expense Failed')
   resetForms()
