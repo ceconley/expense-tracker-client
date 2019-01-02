@@ -1,4 +1,5 @@
-const showAllExpenses = require('./../../handlebars.handlebars')
+const showAllExpenses = require('./../../index-expenses.handlebars')
+const showOneExpense = require('./../../show-expense.handlebars')
 
 const resetForms = () => {
   $('#show-expense')[0].reset()
@@ -11,14 +12,18 @@ const resetForms = () => {
 
 const onShowSuccess = (response) => {
   resetForms()
-  const expenseHTML = (`
-    <h6>ID: ${response.expense.id}</h6>
-    <p>Source: ${response.expense.source}</p>
-    <p>Amount: ${response.expense.amount}</p>
-    <p>Category: ${response.expense.category}</p>
-    <p>Description: ${response.expense.description}</p>
-    `)
-  $('#results').html(expenseHTML)
+  console.log(response)
+  const showExpenseHtml = showOneExpense({ expense: response })
+  $('#results').empty()
+  $('#results').html(showExpenseHtml)
+  // const expenseHTML = (`
+  //   <h6>ID: ${response.expense.id}</h6>
+  //   <p>Source: ${response.expense.source}</p>
+  //   <p>Amount: ${response.expense.amount}</p>
+  //   <p>Category: ${response.expense.category}</p>
+  //   <p>Description: ${response.expense.description}</p>
+  //   `)
+  // $('#results').html(expenseHTML)
 }
 
 const onShowFailure = () => {
