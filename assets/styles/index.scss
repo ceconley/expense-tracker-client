@@ -1,19 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background: #b2d9c5;
+  background-image: url('public/money-background.jpg');
+  background-size: cover;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: #505050;
 }
 
 .buttons {
-  background: #49796b;
+  background: #558b2f;
   color: white;
 }
 
 .forms {
-  background: #1fab89;
-  width: 130px;
+  background: #7cb342;
+  width: 120px;
   font-size: 10pt;
 }
 
@@ -39,30 +39,6 @@ h1 {
   margin: 20px;
 }
 
-// #signOutDiv {
-//   display: flex;
-// }
-
-// #showExpenseDiv {
-//   display: flex;
-//   justify-content: center;
-//   margin-top: 50px;
-// }
-
 #results {
   margin-top: 50px;
 }
-
-// #create-expense {
-//   margin-top: 50px;
-// }
-//
-// #updatdeExpenseDiv {
-//   display: flex;
-//   justify-content: center;
-//   margin-top: 50px;
-// }
-
-// #bodyDiv {
-//   display: flex;
-// }
