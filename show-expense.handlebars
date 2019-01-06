@@ -12,16 +12,15 @@
       </tr>
     </thead>
     <tbody>
-      <!-- {{#each expenses as |expense|}} -->
-        <!-- {{log expense}} -->
+      {{#if expense}}
       <tr>
-        <td>{{expense.id}}</td>
-        <td>{{expense.source}}</td>
-        <td>${{expense.amount}}</td>
-        <td>{{expense.category}}</td>
-        <td>{{expense.description}}</td>
-      <!-- {{/each}} -->
+        <td>{{expense.expense.id}}</td>
+        <td>{{expense.expense.source}}</td>
+        <td>${{expense.expense.amount}}</td>
+        <td>{{expense.expense.category}}</td>
+        <td>{{expense.expense.description}}</td>
       </tr>
+      {{/if}}
     </tbody>
   </table>
 </div>
