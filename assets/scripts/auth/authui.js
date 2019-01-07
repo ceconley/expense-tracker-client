@@ -1,6 +1,6 @@
 const store = require('../store.js')
 
-$('#change-password').hide()
+$('#change-password-modal').hide()
 $('#sign-out').hide()
 $('#show-expense').hide()
 $('#index-expense').hide()
@@ -30,7 +30,7 @@ const signInSuccess = function (data) {
   resetAuthForms()
   $('#sign-in').hide()
   $('#sign-up').hide()
-  $('#change-password').show()
+  $('#change-password-modal').show()
   $('#sign-out').show()
   $('#show-expense').show()
   $('#index-expense').show()

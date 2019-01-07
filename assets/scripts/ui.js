@@ -1,6 +1,8 @@
 const showAllExpenses = require('./../../index-expenses.handlebars')
 const showOneExpense = require('./../../show-expense.handlebars')
 
+$('#change-password-modal').hide()
+
 const resetForms = () => {
   $('#show-expense')[0].reset()
   $('#index-expense')[0].reset()

@@ -2,18 +2,21 @@
 
 body {
   background-image: url('public/money-background.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 .buttons {
   background: #558b2f;
+  border-radius: 6px;
   color: white;
 }
 
 .forms {
   background: #7cb342;
-  width: 120px;
+  border-radius: 6px;
+  width: 130px;
   font-size: 10pt;
 }
 

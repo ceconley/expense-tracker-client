@@ -17,6 +17,7 @@
         <div class="row">
           <div class="col-sm-6">
               <!-- sign up form -->
+            <p class="authMessage"></p>
             <form id="sign-up">
               <fieldset>
                 <legend>Sign Up</legend>
@@ -34,41 +35,44 @@
                 <input type="password" name="credentials[password]" placeholder="Password" class="forms">
                 <input type="submit" value="Sign In" class="buttons">
               </fieldset>
-              <p class="authMessage"></p>
             </form>
               <!-- change password form -->
-            <form id="change-password">
-              <fieldset>
-                <legend>Change Password</legend>
-                <input type="password" name="passwords[old]" placeholder="Old password" class="forms">
-                <input type="password" name="passwords[new]" placeholder="New password" class="forms">
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm New Password" class="forms">
-                <input type="submit" value="Change password" class="buttons">
-              </fieldset>
-              <p class="authMessage"></p>
-            </form>
+            <button type="button" class="btn btn-primary buttons" data-toggle="modal" data-target="#changePasswordModel" id="change-password-modal">Change Password</button>
+            <div class="modal" id="changePasswordModel">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                  <form id="change-password">
+                    <fieldset>
+                      <legend>Change Password</legend>
+                      <input type="password" name="passwords[old]" placeholder="Old password" class="forms">
+                      <input type="password" name="passwords[new]" placeholder="New password" class="forms">
+                      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm New Password" class="forms">
+                      <input type="submit" value="Change password" class="buttons">
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
             <!-- sign out button-->
             <form>
               <button type="button" id="sign-out" class="buttons">Sign Out</button>
             </form>
-              <!-- see an expense form -->
-            <form id="show-expense">
-              <h4>See an Expense</h4>
-              <input type="text" name="id" placeholder="Expense Id" id="show-id" class="forms">
+              <!-- Enter an expense form -->
+            <form id="create-expense">
+              <h4>Add an Expense</h4>
+              <input type="text" name="source" placeholder="Source" id="create-source" class="forms">
+              <input type="text" name="amount" placeholder="Amount" id="create-amount" class="forms">
+              <input type="text" name="category" placeholder="Category" id="create-category" class="forms">
+              <input type="text" name="description" placeholder="Description" id="create-description" class="forms">
               <input type="submit" value="Go" class="buttons">
             </form>
-            <!-- see all expenses button -->
-            <form id="index-expense">
-              <h4>See all Expenses</h4>
-              <input type="submit" value="Show All Expenses" class="buttons">
-            </form>
-              <!-- Delete an expense form -->
-            <form id="destroy-expense">
-              <h4>Remove an Expense</h4>
-              <input type="text" name="id" placeholder="Expense Id" id="destroy-id" class="forms">
-              <input type="submit" value="Go" class="buttons">
-            </form>
-            <!-- Edit an expense form -->
+              <!-- Edit an expense form -->
             <form id="update-expense">
               <h4>Edit an Expense</h4>
               <input type="text" name="id" placeholder="Expense Id" id="update-id" class="forms">
@@ -78,14 +82,22 @@
               <input type="text" name="description" placeholder="Description" id="update-description" class="forms">
               <input type="submit" value="Go" class="buttons">
             </form>
-            <!-- Enter an expense form -->
-            <form id="create-expense">
-              <h4>Add an Expense</h4>
-              <input type="text" name="source" placeholder="Source" id="create-source" class="forms">
-              <input type="text" name="amount" placeholder="Amount" id="create-amount" class="forms">
-              <input type="text" name="category" placeholder="Category" id="create-category" class="forms">
-              <input type="text" name="description" placeholder="Description" id="create-description" class="forms">
+              <!-- Delete an expense form -->
+            <form id="destroy-expense">
+              <h4>Remove an Expense</h4>
+              <input type="text" name="id" placeholder="Expense Id" id="destroy-id" class="forms">
               <input type="submit" value="Go" class="buttons">
+            </form>
+              <!-- see an expense form -->
+            <form id="show-expense">
+              <h4>See an Expense</h4>
+              <input type="text" name="id" placeholder="Expense Id" id="show-id" class="forms">
+              <input type="submit" value="Go" class="buttons">
+            </form>
+              <!-- see all expenses button -->
+            <form id="index-expense">
+              <h4>See all Expenses</h4>
+              <input type="submit" value="Show All Expenses" class="buttons">
             </form>
           </div>
           <div class="col-sm-6">
