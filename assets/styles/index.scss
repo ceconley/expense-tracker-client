@@ -13,6 +13,10 @@ body {
   color: white;
 }
 
+#changePasswordModal {
+  background: 708238;
+}
+
 .forms {
   background: #7cb342;
   border-radius: 6px;
@@ -26,6 +30,13 @@ form {
 
 h1 {
   text-align: center;
+}
+
+.auth-buttons {
+  display: flex;
+  white-space: nowrap;
+  height: 30px;
+  font-size: 8pt;
 }
 
 ::placeholder {
