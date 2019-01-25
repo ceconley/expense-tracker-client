@@ -26,7 +26,6 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   store.user = data.user
-  $('.authMessage').html('Signed In Successfully')
   resetAuthForms()
   $('#sign-in').hide()
   $('#sign-up').hide()
@@ -55,7 +54,6 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('.authMessage').html('Signed Out Successfully')
   store.user = null
   resetAuthForms()
   $('#results').html('')

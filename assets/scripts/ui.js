@@ -27,9 +27,20 @@ const onShowFailure = () => {
 
 const onIndexSuccess = (response) => {
   resetForms()
+  console.log(response)
+  const amountArr = []
+  response.expenses.forEach(function (exp) {
+    const amounts = exp.amount
+    amountArr.push(amounts)
+  })
+  const amountArrSum = (acc, curr) => acc + curr
+  const amountSum = amountArr.reduce(amountArrSum)
+  console.log(amountSum)
   const showExpensesHtml = showAllExpenses({ expenses: response.expenses })
   $('#results').empty()
   $('#results').append(showExpensesHtml)
+  $('#amount-sum').empty()
+  $('#amount-sum').append(`$${amountSum}`)
 }
 
 const onIndexFailure = () => {
