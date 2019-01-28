@@ -33,7 +33,7 @@ const onIndexSuccess = (response) => {
     amountArr.push(amounts)
   })
   const amountArrSum = (acc, curr) => acc + curr
-  const amountSum = amountArr.reduce(amountArrSum).toFixed(2)
+  const amountSum = amountArr.reduce(amountArrSum).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   const showExpensesHtml = showAllExpenses({ expenses: response.expenses })
   $('#results').empty()
   $('#results').append(showExpensesHtml)
