@@ -4,6 +4,7 @@
   <!--Table head-->
     <thead>
       <tr id="header-row">
+        <th scope="col">Date/Time</th>
         <th scope="col">Id</th>
         <th scope="col">Source</th>
         <th scope="col">Amount</th>
@@ -17,6 +18,7 @@
     <tbody>
       {{#each expenses as |expense|}}
       <tr>
+        <td>{{this.created_at}}</td>
         <td>{{this.id}}</td>
         <td>{{this.source}}</td>
         <td>${{this.amount}}</td>
@@ -26,9 +28,9 @@
       </tr>
       <tr>
         <td></td>
+        <td></td>
         <td>Total:</td>
         <td id="amount-sum"></td>
-        <td></td>
         <td></td>
       </tr>
     </tbody>
