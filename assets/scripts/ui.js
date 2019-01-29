@@ -27,12 +27,6 @@ const onShowFailure = () => {
 
 const onIndexSuccess = (response) => {
   resetForms()
-  // const expenseDate = Date.parse(response.expenses.created_at)
-  console.log(response.expenses)
-  // const expenseDates = response.expenses.map(exp => Date.parse(exp.created_at))
-  $.each(response.expenses, function () {
-    this.created_at = this.created_at.setDate()
-  })
   console.log(response.expenses)
   const amountArr = []
   response.expenses.forEach(function (exp) {
