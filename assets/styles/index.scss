@@ -5,6 +5,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  width: 100%;
 }
 
 .buttons {
@@ -20,13 +21,13 @@ body {
 .forms {
   background: #7cb342;
   border-radius: 6px;
-  width: 130px;
+  width: 120px;
   font-size: 10pt;
   color: white;
 }
 
 form {
-  margin: 20px;
+  margin: 20px, 0;
 }
 
 h1 {
@@ -55,17 +56,42 @@ h1 {
 }
 
 #results {
-  margin-top: 50px;
+  width: 100%;
 }
 
 .modal-content {
   background: #b2b27f;
 }
 
-// #results {
-//   background: grey;
-//   display: table;
-// }
+#delete-expense {
+  margin: 20px, 0;
+}
+
+#delete-expense-data {
+  text-align: center;
+  font-weight: bold;
+}
+
+#confirm-p{
+  font-size: 20pt;
+}
+
+#index-expense-table {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.table-col {
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+
+} 
+
+@media only screen and (min-width: 700px) {
+  
+} 
 
 // #header-row {
 //   position: sticky;

@@ -14,7 +14,6 @@
     <body>
       <div class="container header">
         <div class="row">
-          <div class="col-2"></div>
           <div class="col-8">
             <h1>Expense Tracker</h1>
           </div>
@@ -28,7 +27,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm">
               <!-- sign up form -->
             <p class="authMessage"></p>
             <form id="sign-up">
@@ -58,78 +57,103 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div class="modal-body">
-                  <form id="change-password">
-                    <fieldset>
-                      <input type="password" name="passwords[old]" placeholder="Old password" class="forms">
-                      <input type="password" name="passwords[new]" placeholder="New password" class="forms">
-                      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm New Password" class="forms">
-                      <input type="submit" value="Change password" class="buttons">
-                    </fieldset>
-                  </form>
+                    <form id="change-password">
+                      <fieldset>
+                        <input type="password" name="passwords[old]" placeholder="Old password" class="forms">
+                        <input type="password" name="passwords[new]" placeholder="New password" class="forms">
+                        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm New Password" class="forms">
+                        <input type="submit" value="Change password" class="buttons">
+                      </fieldset>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
               <!-- Enter an expense form -->
-            <form id="create-expense">
-              <h4>Add an Expense</h4>
-              <input type="text" name="source" placeholder="Source" id="create-source" class="forms">
-              <input type="text" name="amount" placeholder="Amount" id="create-amount" class="forms">
-              <select class="forms" id="create-category">
-                <option value="Home">Home</option>
-                <option value="Vehicle">Vehicle</option>
-                <option value="Grocery">Grocery</option>
-                <option value="Recreation">Recreation</option>
-                <option value="Gifts">Gifts</option>
-                <option value="Communications">Communications</option>
-                <option value="Savings & Investments">Savings & Investments</option>
-              </select>
-              <!-- <input type="text" name="category" placeholder="Category" id="create-category" class="forms"> -->
-              <input type="text" name="description" placeholder="Description" id="create-description" class="forms">
-              <input type="submit" value="Go" class="buttons">
-            </form>
+            <div>
+              <form id="create-expense">
+                <h4>Add an Expense</h4>
+                <input type="text" name="source" placeholder="Source" id="create-source" class="forms">
+                <input type="text" name="amount" placeholder="Amount" id="create-amount" class="forms">
+                <select class="forms" id="create-category">
+                  <option value="Home">Home</option>
+                  <option value="Vehicle">Vehicle</option>
+                  <option value="Grocery">Grocery</option>
+                  <option value="Recreation">Recreation</option>
+                  <option value="Gifts">Gifts</option>
+                  <option value="Communications">Communications</option>
+                  <option value="Savings & Investments">Savings & Investments</option>
+                </select>
+                <!-- <input type="text" name="category" placeholder="Category" id="create-category" class="forms"> -->
+                <input type="text" name="description" placeholder="Description" id="create-description" class="forms">
+                <input type="submit" value="Go" class="buttons">
+              </form>
+            </div>
               <!-- Edit an expense form -->
-            <form id="update-expense">
-              <h4>Edit an Expense</h4>
-              <input type="text" name="id" placeholder="Expense Id" id="update-id" class="forms">
-              <input type="text" name="source" placeholder="Source" id="update-source" class="forms">
-              <input type="text" name="amount" placeholder="Amount" id="update-amount" class="forms">
-              <select class="forms" id="update-category">
-                <option value="Home">Home</option>
-                <option value="Vehicle">Vehicle</option>
-                <option value="Grocery">Grocery</option>
-                <option value="Recreation">Recreation</option>
-                <option value="Gifts">Gifts</option>
-                <option value="Communications">Communications</option>
-                <option value="Savings & Investments">Savings & Investments</option>
-              </select>
-              <!-- <input type="text" name="category" placeholder="Category" id="update-category" class="forms"> -->
-              <input type="text" name="description" placeholder="Description" id="update-description" class="forms">
-              <input type="submit" value="Go" class="buttons">
-            </form>
+            <div>
+              <form id="update-expense">
+                <h4>Edit an Expense</h4>
+                <input type="text" name="id" placeholder="Expense Id" id="update-id" class="forms">
+                <input type="text" name="source" placeholder="Source" id="update-source" class="forms">
+                <input type="text" name="amount" placeholder="Amount" id="update-amount" class="forms">
+                <select class="forms" id="update-category">
+                  <option value="Home">Home</option>
+                  <option value="Vehicle">Vehicle</option>
+                  <option value="Grocery">Grocery</option>
+                  <option value="Recreation">Recreation</option>
+                  <option value="Gifts">Gifts</option>
+                  <option value="Communications">Communications</option>
+                  <option value="Savings & Investments">Savings & Investments</option>
+                </select>
+                <!-- <input type="text" name="category" placeholder="Category" id="update-category" class="forms"> -->
+                <input type="text" name="description" placeholder="Description" id="update-description" class="forms">
+                <input type="submit" value="Go" class="buttons">
+              </form>
+            </div>
               <!-- Delete an expense form -->
-            <form id="destroy-expense">
+            <div id="delete-expense">
               <h4>Remove an Expense</h4>
-              <input type="text" name="id" placeholder="Expense Id" id="destroy-id" class="forms">
-              <input type="submit" value="Go" class="buttons">
-            </form>
+              <input type="text" placeholder="Expense Id" id="delete-id" class="forms">
+              <button class="buttons" data-toggle="modal" id="delete-expense-button" data-target="#deleteExpenseModal">Go</button>
+              <div class="modal" id="deleteExpenseModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Confirmation</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body" id="delete-expense-modal"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
               <!-- see an expense form -->
-            <form id="show-expense">
-              <h4>See an Expense</h4>
-              <input type="text" name="id" placeholder="Expense Id" id="show-id" class="forms">
-              <input type="submit" value="Go" class="buttons">
-            </form>
+            <div>
+              <form id="show-expense">
+                <h4>See an Expense</h4>
+                <input type="text" name="id" placeholder="Expense Id" id="show-id" class="forms">
+                <input type="submit" value="Go" class="buttons">
+              </form>
+            </div>
               <!-- see all expenses button -->
-            <form id="index-expense">
-              <h4>See all Expenses</h4>
-              <input type="submit" value="Show All Expenses" class="buttons">
-            </form>
+            <div>
+              <form id="index-expense">
+                <h4>See all Expenses</h4>
+                <input type="submit" value="Show All Expenses" class="buttons">
+              </form>
+            </div>   
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-12 col-md-8 table-col">
             <!-- Display table div -->
             <div id="results"></div>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div>  
     </body>
 </html>

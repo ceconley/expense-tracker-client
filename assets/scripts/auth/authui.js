@@ -5,7 +5,7 @@ $('#sign-out').hide()
 $('#show-expense').hide()
 $('#index-expense').hide()
 $('#create-expense').hide()
-$('#destroy-expense').hide()
+$('#delete-expense').hide()
 $('#update-expense').hide()
 
 const resetAuthForms = () => {
@@ -34,7 +34,7 @@ const signInSuccess = function (data) {
   $('#show-expense').show()
   $('#index-expense').show()
   $('#create-expense').show()
-  $('#destroy-expense').show()
+  $('#delete-expense').show()
   $('#update-expense').show()
 }
 
@@ -64,7 +64,7 @@ const signOutSuccess = function () {
   $('#show-expense').hide()
   $('#index-expense').hide()
   $('#create-expense').hide()
-  $('#destroy-expense').hide()
+  $('#delete-expense').hide()
   $('#update-expense').hide()
 }
 

@@ -1,0 +1,15 @@
+<div id="confirmation-delete">
+  {{#if expense}}
+  <p id="confirm-p">Are you sure you want to Remove:</p>
+  <p id="delete-expense-data">
+    id: {{this.expense.id}}
+    <br/>
+    From: {{this.expense.source}}  
+    <br/>
+    {{this.expense.description}} 
+    <br/>
+    ${{this.expense.amount}}
+  </p>
+  {{/if}}
+  <button class="buttons" id="delete-confirm" data-dismiss="modal">Delete</button>
+</div>

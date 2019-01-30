@@ -9,6 +9,7 @@ const showExpense = (data) =>
       Authorization: 'Token token=' + store.user.token
     }
   })
+
 const indexExpense = () =>
   $.ajax({
     url: config.apiUrl + '/expenses',
@@ -18,9 +19,9 @@ const indexExpense = () =>
     }
   })
 
-const destroyExpense = () =>
+const deleteExpense = () =>
   $.ajax({
-    url: config.apiUrl + '/expenses/' + $('#destroy-id').val(),
+    url: config.apiUrl + '/expenses/' + $('#delete-id').val(),
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -50,7 +51,7 @@ const createExpense = (data) =>
 module.exports = {
   showExpense,
   indexExpense,
-  destroyExpense,
+  deleteExpense,
   updateExpense,
   createExpense
 }

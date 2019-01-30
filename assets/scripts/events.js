@@ -8,18 +8,28 @@ const onShowExpense = (event) => {
     .then(ui.onShowSuccess)
     .catch(ui.onShowFailure)
 }
+
+const onShowForDeleteExpense = () => {
+  $('#show-id').val($('#delete-id').val())
+  api.showExpense()
+    .then(ui.showForDeleteExpenseSuccess)
+    .catch(ui.showForDeleteExpenseFailure)
+}
+
 const onIndexExpense = (event) => {
   event.preventDefault()
   api.indexExpense()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
 }
-const onDestroyExpense = (event) => {
+
+const onDeleteExpense = (event) => {
   event.preventDefault()
-  api.destroyExpense()
-    .then(ui.onDestroySuccess)
-    .catch(ui.onDestroyFailure)
+  api.deleteExpense()
+    .then(ui.onDeleteSuccess)
+    .catch(ui.onDeleteFailure)
 }
+
 const onUpdateExpense = (event) => {
   event.preventDefault()
   const currUserId = store.user.id
@@ -59,8 +69,9 @@ const onCreateExpense = (event) => {
 
 module.exports = {
   onShowExpense,
+  onShowForDeleteExpense,
   onIndexExpense,
-  onDestroyExpense,
+  onDeleteExpense,
   onUpdateExpense,
   onCreateExpense
 }
