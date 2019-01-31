@@ -2,10 +2,12 @@
 
 body {
   background-image: url('public/money-background.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .buttons {
@@ -32,6 +34,7 @@ form {
 
 h1 {
   text-align: center;
+  font-size: 36pt;
 }
 
 .auth-buttons {
@@ -85,17 +88,65 @@ h1 {
   width: 100%;
 }
 
-@media only screen and (max-width: 700px) {
+#table-container {
+  padding: 0;
+  margin: 0;
+}
 
-} 
+#header-row {
+  font-size: 12pt;
+  text-decoration: underline;
+}
 
 @media only screen and (min-width: 700px) {
+  .forms {
+    width: 110px;
+    font-size: 10pt;
+  }
   
+  form {
+    margin: 15px, 0;
+  }
+  
+  h1 {
+    font-size: 20pt;
+  }
+
+  #index-expense-table {
+    font-size: 10pt;
+    font-weight: bold;
+  }
+  
+  #header-row {
+    font-size: 12pt;
+    text-decoration: underline;
+  }
 } 
 
-// #header-row {
-//   position: sticky;
-// }
+@media only screen and (max-width: 700px) {
+  .forms {
+    width: 100px;
+    font-size: 8pt;
+  }
+  
+  form {
+    margin: 10px, 0;
+  }
+  
+  h1 {
+    font-size: 16pt;
+  }
+
+  #index-expense-table {
+    font-size: 8pt;
+    font-weight: bold;
+  }
+  
+  #header-row {
+    font-size: 10pt;
+    text-decoration: underline;
+  }
+}
 
 // table {
 //   height: 200px;
