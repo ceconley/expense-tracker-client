@@ -8,6 +8,7 @@ body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .buttons {
@@ -35,10 +36,12 @@ form {
 h1 {
   text-align: center;
   font-size: 36pt;
+  font-weight: bold;
 }
 
 .auth-buttons {
   display: flex;
+  justify-content: flex-end;
   white-space: nowrap;
   height: 30px;
   font-size: 8pt;
@@ -98,6 +101,10 @@ h1 {
   text-decoration: underline;
 }
 
+.header-buttons {
+  
+}
+
 @media only screen and (min-width: 700px) {
   .forms {
     width: 110px;
@@ -110,6 +117,7 @@ h1 {
   
   h1 {
     font-size: 20pt;
+    text-align: right;
   }
 
   #index-expense-table {
@@ -134,7 +142,8 @@ h1 {
   }
   
   h1 {
-    font-size: 16pt;
+    font-size: 14pt;
+    text-align: left;
   }
 
   #index-expense-table {
@@ -145,6 +154,11 @@ h1 {
   #header-row {
     font-size: 10pt;
     text-decoration: underline;
+  }
+
+  .header-buttons {
+    font-size: 8pt;
+    width: 110px; 
   }
 }
 

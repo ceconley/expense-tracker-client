@@ -15,12 +15,12 @@ const resetAuthForms = () => {
 }
 
 const signUpSuccess = () => {
-  $('.authMessage').html('Signed Up Successfully')
+  $('.authMessage').text('Signed Up Successfully')
   resetAuthForms()
 }
 
 const signUpFailure = function () {
-  $('.authMessage').html('Signed Up Failed')
+  $('.authMessage').text('Signed Up Failed')
   resetAuthForms()
 }
 
@@ -39,38 +39,41 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
-  $('.authMessage').html('Signed In Failed')
+  $('.authMessage').httextml('Signed In Failed')
   resetAuthForms()
 }
 
 const changePasswordSuccess = function () {
-  $('.authMessage').html('Password changed successfully')
+  $('.authMessage').text('Password changed successfully')
+  $('#changePasswordModal').modal('hide')
   resetAuthForms()
 }
 
 const changePasswordFailure = function () {
-  $('.authMessage').html('Error on password change')
+  $('.authMessage').text('Error on password change')
   resetAuthForms()
 }
 
 const signOutSuccess = function () {
   store.user = null
   resetAuthForms()
-  $('#results').html('')
+  $('.authMessage').text('')
+  $('#results').text('')
   $('#sign-in').show()
   $('#sign-up').show()
-  $('#change-password').hide()
+  $('#change-password-modal').hide()
   $('#sign-out').hide()
   $('#show-expense').hide()
   $('#index-expense').hide()
   $('#create-expense').hide()
   $('#delete-expense').hide()
   $('#update-expense').hide()
+  $('#change-password-modal').hide()
 }
 
 const signOutFailure = function () {
   resetAuthForms()
-  $('.authMessage').html('Signed Out Failed')
+  $('.authMessage').text('Signed Out Failed')
 }
 
 module.exports = {
