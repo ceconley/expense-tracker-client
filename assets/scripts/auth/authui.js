@@ -36,10 +36,11 @@ const signInSuccess = function (data) {
   $('#create-expense').show()
   $('#delete-expense').show()
   $('#update-expense').show()
+  $('.authMessage').text('')
 }
 
 const signInFailure = function () {
-  $('.authMessage').httextml('Signed In Failed')
+  $('.authMessage').text('Signed In Failed')
   resetAuthForms()
 }
 

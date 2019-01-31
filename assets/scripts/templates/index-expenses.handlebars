@@ -4,33 +4,33 @@
   <!--Table head-->
     <thead>
       <tr id="header-row">
-        <th scope="col">Date</th>
-        <th scope="col">Id</th>
-        <th scope="col">Source</th>
-        <th scope="col">Category</th>
-        <th scope="col">Description</th>
-        <th scope="col">Amount</th>
+        <th><div class="date-width">Date</div></th>
+        <th><div class="id-width">Id</div></th>
+        <th><div class="source-width">Source</div></th>
+        <th><div class="category-width">Category</div></th>
+        <th><div class="desc-width">Description</div></th>
+        <th><div class="amount-width">Amount</div></th>
       </tr>
     </thead>
     <br/>
     <tbody>
       {{#each expenses as |expense|}}
       <tr>
-        <td>{{this.created_at_display}}</td>
-        <td>{{this.id}}</td>
-        <td>{{this.source}}</td>
-        <td>{{this.category}}</td>
-        <td>{{this.description}}</td>
-        <td>${{this.amount}}</td>
+        <td><div class="date-width">{{this.created_at_display}}</div></td>
+        <td><div class="id-width">{{this.id}}</div></td>
+        <td><div class="source-width">{{this.source}}</div></td>
+        <td><div class="category-width">{{this.category}}</div></td>
+        <td><div class="desc-width">{{this.description}}</div></td>
+        <td><div class="amount-width">${{this.amount}}</div></td>
       {{/each}}
       </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Total:</td>
-        <td id="amount-sum"></td>
+        <td class="date-width"></td>
+        <td class="id-width"></td>
+        <td class="source-width"></td>
+        <td class="category-width"></td>
+        <td class="desc-width">Total:</td>
+        <td class="amount-width" id="amount-sum"></td>
       </tr>
     </tbody>
   </table>

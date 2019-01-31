@@ -35,7 +35,6 @@ form {
 
 h1 {
   text-align: center;
-  font-size: 36pt;
   font-weight: bold;
 }
 
@@ -87,22 +86,38 @@ h1 {
   font-weight: bold;
 }
 
-.table-col {
-  width: 100%;
-}
-
-#table-container {
-  padding: 0;
-  margin: 0;
-}
-
 #header-row {
   font-size: 12pt;
   text-decoration: underline;
 }
 
-.header-buttons {
-  
+table thead tr {
+  display: block;
+}
+
+table  tbody {
+  display: block;
+  height: 500px;
+  overflow: auto;
+}
+
+.date-width {
+  width: 85px;
+}
+.id-width {
+  width: 20px;
+}
+.source-width {
+  width: 80px;
+}
+.category-width {
+  width: 75px;
+}
+.desc-width {
+  width: 100px;
+}
+.amount-width {
+  width: 75px;
 }
 
 @media only screen and (min-width: 700px) {
@@ -131,7 +146,7 @@ h1 {
   }
 } 
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .forms {
     width: 100px;
     font-size: 8pt;
@@ -162,7 +177,3 @@ h1 {
   }
 }
 
-// table {
-//   height: 200px;
-//   overflow: scroll;
-// }
