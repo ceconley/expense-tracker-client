@@ -1,179 +1,365 @@
 @import '~bootstrap/scss/bootstrap';
 
-body {
-  background-image: url('public/money-background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
+@media (max-width: 600px) {
 
-.buttons {
-  background: #558b2f;
-  border-radius: 6px;
-  color: white;
-}
-
-#changePasswordModal {
-  background: 708238;
-}
-
-.forms {
-  background: #7cb342;
-  border-radius: 6px;
-  width: 120px;
-  font-size: 10pt;
-  color: white;
-}
-
-form {
-  margin: 20px, 0;
-}
-
-h1 {
-  text-align: center;
-  font-weight: bold;
-}
-
-.auth-buttons {
-  display: flex;
-  justify-content: flex-end;
-  white-space: nowrap;
-  height: 30px;
-  font-size: 8pt;
-}
-
-::placeholder {
-  color: white;
-}
-
-#signInDiv {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-#authMessage {
-  margin: 20px;
-}
-
-#results {
-  width: 100%;
-}
-
-.modal-content {
-  background: #b2b27f;
-}
-
-#delete-expense {
-  margin: 20px, 0;
-}
-
-#delete-expense-data {
-  text-align: center;
-  font-weight: bold;
-}
-
-#confirm-p{
-  font-size: 20pt;
-}
-
-#index-expense-table {
-  font-size: 10pt;
-  font-weight: bold;
-}
-
-#header-row {
-  font-size: 12pt;
-  text-decoration: underline;
-}
-
-table thead tr {
-  display: block;
-}
-
-table  tbody {
-  display: block;
-  height: 500px;
-  overflow: auto;
-}
-
-.date-width {
-  width: 85px;
-}
-.id-width {
-  width: 20px;
-}
-.source-width {
-  width: 80px;
-}
-.category-width {
-  width: 75px;
-}
-.desc-width {
-  width: 100px;
-}
-.amount-width {
-  width: 75px;
-}
-
-@media only screen and (min-width: 700px) {
-  .forms {
-    width: 110px;
-    font-size: 10pt;
+  .auth-buttons {
+    display: flex;
+    justify-content: flex-end;
+    white-space: nowrap;
+    height: 30px;
+    font-size: 8pt;
   }
-  
-  form {
-    margin: 15px, 0;
+
+  #authMessage {
+    margin: 20px;
   }
-  
-  h1 {
+
+  body {
+    background-image: url('public/money-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+
+  #button-index-expense {
+    width: 120px;
+  }
+
+  .buttons {
+    background: #558b2f;
+    border-radius: 6px;
+    color: white;
+    height: 24px;
+    width: 60px;
+    font-size: 8pt;
+  }
+
+  #changePasswordModal {
+    background: 708238;
+  }
+
+  #confirm-p{
     font-size: 20pt;
-    text-align: right;
   }
 
-  #index-expense-table {
-    font-size: 10pt;
+  #delete-expense {
+    margin: 20px, 0;
+  }
+
+  #delete-expense-data {
+    text-align: center;
     font-weight: bold;
   }
-  
-  #header-row {
-    font-size: 12pt;
-    text-decoration: underline;
-  }
-} 
 
-@media (max-width: 700px) {
   .forms {
+    background: #7cb342;
+    border-radius: 6px;
     width: 100px;
     font-size: 8pt;
-  }
-  
-  form {
-    margin: 10px, 0;
-  }
-  
-  h1 {
-    font-size: 14pt;
-    text-align: left;
+    color: white;
   }
 
-  #index-expense-table {
-    font-size: 8pt;
-    font-weight: bold;
-  }
-  
-  #header-row {
-    font-size: 10pt;
-    text-decoration: underline;
+  form {
+    margin: 10px, 0;
   }
 
   .header-buttons {
     font-size: 8pt;
     width: 110px; 
   }
+
+  #header-row {
+    font-size: 10pt;
+    text-decoration: underline;
+  }
+
+  h1 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+
+  #index-expense-table {
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #e8e6d9
+  }
+
+  .modal-content {
+    background: #b2b27f;
+  }
+
+  ::placeholder {
+    color: white;
+  }
+
+  #results {
+    width: 100%;
+  }
+
+  #signInDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  table  tbody {
+    display: block;
+    height: 500px;
+    overflow: auto;
+  }
+
+  table thead tr {
+    display: block;
+  } 
+
+  // Table Column Widths
+  .date-width {
+    width: 85px;
+  }
+
+  .id-width {
+    width: 20px;
+  }
+
+  .source-width {
+    width: 80px;
+  }
+
+  .category-width {
+    width: 75px;
+  }
+
+  .desc-width {
+    width: 100px;
+  }
+
+  .amount-width {
+    width: 75px;
+  }
 }
 
+@media only screen and (min-width: 600px) {
+
+  .auth-buttons {
+    display: flex;
+    justify-content: flex-end;
+    white-space: nowrap;
+    height: 30px;
+    font-size: 8pt;
+  }
+
+  #authMessage {
+    margin: 20px;
+  }
+
+  body {
+    background-image: url('public/money-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+
+  #button-index-expense {
+    width: 135px;
+  }
+
+  .buttons {
+    background: #558b2f;
+    border-radius: 6px;
+    color: white;
+    height: 32px;
+    width: 70px;
+    font-size: 10pt;
+  }
+
+  #changePasswordModal {
+    background: 708238;
+  }
+
+  #confirm-p{
+    font-size: 20pt;
+  }
+
+  #delete-expense {
+    margin: 20px, 0;
+  }
+
+  #delete-expense-data {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .forms {
+    background: #7cb342;
+    border-radius: 6px;
+    height: 32px;
+    width: 120px;
+    font-size: 10pt;
+    color: white;
+  }
+
+  form {
+    margin: 10px, 0;
+  }
+
+  .header-buttons {
+    font-size: 8pt;
+    width: 110px; 
+  }
+
+  #header-row {
+    font-size: 10pt;
+    text-decoration: underline;
+  }
+
+  h1 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 24pt;
+  }
+
+  #index-expense-table {
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #e8e6d9
+  }
+
+  .modal-content {
+    background: #b2b27f;
+  }
+
+  ::placeholder {
+    color: white;
+  }
+
+  #results {
+    width: 100%;
+  }
+
+  #signInDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  table  tbody {
+    display: block;
+    height: 500px;
+    overflow: auto;
+  }
+
+  table thead tr {
+    display: block;
+  } 
+
+  // Table Column Widths
+  .date-width {
+    width: 75px;
+  }
+
+  .id-width {
+    width: 20px;
+  }
+
+  .source-width {
+    width: 70px;
+  }
+
+  .category-width {
+    width: 70px;
+  }
+
+  .desc-width {
+    width: 80px;
+  }
+
+  .amount-width {
+    width: 65px;
+  }
+} 
+
+@media only screen and (min-width: 1025px) {
+
+  .auth-buttons {
+    height: 30px;
+    font-size: 8pt;
+  }
+
+  #authMessage {
+    margin: 20px;
+  }
+
+  body {
+    background-image: url('public/money-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+
+  #confirm-p{
+    font-size: 20pt;
+  }
+
+  #delete-expense {
+    margin: 20px, 0;
+  }
+
+  .forms {
+    width: 120px;
+    font-size: 10pt;
+  }
+
+  form {
+    margin: 20px, 0;
+  }
+
+  #header-row {
+    font-size: 12pt;
+  }
+
+  h1 {
+    font-size: 36pt;
+  }
+
+  #index-expense-table {
+    font-size: 11pt;
+    background-color: #e8e6d9
+  }
+
+  #signInDiv {
+    margin-top: 50px;
+  }
+
+  table  tbody {
+    height: 500px;
+  }
+
+  // Table Column Widths
+  .date-width {
+    width: 95px;
+  }
+
+  .id-width {
+    width: 25px;
+  }
+
+  .source-width {
+    width: 95px;
+  }
+
+  .category-width {
+    width: 85px;
+  }
+
+  .desc-width {
+    width: 115px;
+  }
+
+  .amount-width {
+    width: 85px;
+  }
+}
