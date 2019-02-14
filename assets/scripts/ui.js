@@ -27,7 +27,6 @@ const onShowFailure = () => {
 }
 
 const showForDeleteExpenseSuccess = (response) => {
-  console.log(response)
   const showExpenseHtml = showForDelete({ expense: response.expense })
   $('#delete-expense-modal').empty()
   $('#delete-expense-modal').append(showExpenseHtml)
@@ -40,7 +39,6 @@ const showForDeleteExpenseFailure = () => {
 
 const onIndexSuccess = (response) => {
   resetForms()
-  console.log(response.expenses)
   const amountArr = []
   response.expenses.forEach(function (exp) {
     const amounts = exp.amount

@@ -78,6 +78,7 @@
     text-align: left;
     font-weight: bold;
     font-size: 14pt;
+    color: #003b00;
   }
 
   #index-expense-table {
@@ -114,6 +115,10 @@
     display: block;
   } 
 
+  table tfoot tr {
+    display: block;
+  }
+
   // Table Column Widths
   .date-width {
     width: 85px;
@@ -140,7 +145,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
 
   .auth-buttons {
     display: flex;
@@ -219,6 +224,7 @@
     text-align: left;
     font-weight: bold;
     font-size: 24pt;
+    color: #003b00;
   }
 
   #index-expense-table {
@@ -255,6 +261,10 @@
     display: block;
   } 
 
+  table tfoot tr {
+    display: block;
+  }
+
   // Table Column Widths
   .date-width {
     width: 75px;
@@ -281,7 +291,7 @@
   }
 } 
 
-@media only screen and (min-width: 1025px) {
+@media (min-width: 1025px) {
 
   .auth-buttons {
     height: 30px;
@@ -323,6 +333,7 @@
 
   h1 {
     font-size: 36pt;
+    color: #003b00;
   }
 
   #index-expense-table {
@@ -338,28 +349,32 @@
     height: 500px;
   }
 
+  table tfoot tr {
+    display: block;
+  }
+
   // Table Column Widths
   .date-width {
-    width: 95px;
-  }
-
-  .id-width {
-    width: 25px;
-  }
-
-  .source-width {
-    width: 95px;
-  }
-
-  .category-width {
-    width: 85px;
-  }
-
-  .desc-width {
     width: 115px;
   }
 
+  .id-width {
+    width: 45px;
+  }
+
+  .source-width {
+    width: 115px;
+  }
+
+  .category-width {
+    width: 105px;
+  }
+
+  .desc-width {
+    width: 135px;
+  }
+
   .amount-width {
-    width: 85px;
+    width: 105px;
   }
 }
