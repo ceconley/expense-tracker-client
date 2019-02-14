@@ -1,6 +1,6 @@
 # Expense Tracker
 
-![Pic of App](https://github.com/ceconley/daily-fantasy-champs-client/blob/master/public/ET.png "App")
+![Pic of App](https://github.com/ceconley/expense-tracker-client/blob/master/public/ET.png "App")
 
 This is a single page application that tracks expenses. Users can create, update, delete, see 1 and see all expenses. They can only access expenses that are tied to their specific user id and no other user's expenses. This SPA runs off a custom API that was built with Rails and PostgreSQL.
 
