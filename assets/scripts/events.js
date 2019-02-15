@@ -22,7 +22,7 @@ const onCreateExpense = (event) => {
     .catch(ui.onCreateFailure)
 }
 
-// READ/INDEX
+// READ - INDEX
 
 const onIndexExpense = (event) => {
   event.preventDefault()
@@ -31,7 +31,7 @@ const onIndexExpense = (event) => {
     .catch(ui.onIndexFailure)
 }
 
-// READ/SHOW
+// READ - SHOW
 
 const onShowExpense = (event) => {
   event.preventDefault()

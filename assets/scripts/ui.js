@@ -14,27 +14,16 @@ const resetForms = () => {
   $('#results').text('')
 }
 
-const onShowSuccess = (response) => {
+const onCreateSuccess = (data) => {
   resetForms()
-  const showExpenseHtml = showOneExpense({ expense: response })
-  $('#results').empty()
-  $('#results').append(showExpenseHtml)
+  api.indexExpense()
+    .then(onIndexSuccess)
+    .catch(onIndexFailure)
 }
 
-const onShowFailure = () => {
+const onCreateFailure = () => {
+  $('#results').text('Create Expense Failed')
   resetForms()
-  $('#results').text('Show Expense Failed')
-}
-
-const showForDeleteExpenseSuccess = (response) => {
-  const showExpenseHtml = showForDelete({ expense: response.expense })
-  $('#delete-expense-modal').empty()
-  $('#delete-expense-modal').append(showExpenseHtml)
-}
-
-const showForDeleteExpenseFailure = () => {
-  resetForms()
-  $('#results').text('Show Expense Failed')
 }
 
 const onIndexSuccess = (response) => {
@@ -58,16 +47,27 @@ const onIndexFailure = () => {
   $('#results').text('Show All Expenses Failed')
 }
 
-const onDeleteSuccess = () => {
+const onShowSuccess = (response) => {
   resetForms()
-  api.indexExpense()
-    .then(onIndexSuccess)
-    .catch(onIndexFailure)
+  const showExpenseHtml = showOneExpense({ expense: response })
+  $('#results').empty()
+  $('#results').append(showExpenseHtml)
 }
 
-const onDeleteFailure = () => {
+const onShowFailure = () => {
   resetForms()
-  $('#results').text('Delete Expense Failed')
+  $('#results').text('Show Expense Failed')
+}
+
+const showForDeleteExpenseSuccess = (response) => {
+  const showExpenseHtml = showForDelete({ expense: response.expense })
+  $('#delete-expense-modal').empty()
+  $('#delete-expense-modal').append(showExpenseHtml)
+}
+
+const showForDeleteExpenseFailure = () => {
+  resetForms()
+  $('#results').text('Show Expense Failed')
 }
 
 const onUpdateSuccess = () => {
@@ -82,29 +82,29 @@ const onUpdateFailure = () => {
   $('#results').text('Update Expense Failed')
 }
 
-const onCreateSuccess = (data) => {
+const onDeleteSuccess = () => {
   resetForms()
   api.indexExpense()
     .then(onIndexSuccess)
     .catch(onIndexFailure)
 }
 
-const onCreateFailure = () => {
-  $('#results').text('Create Expense Failed')
+const onDeleteFailure = () => {
   resetForms()
+  $('#results').text('Delete Expense Failed')
 }
 
 module.exports = {
+  onCreateSuccess,
+  onCreateFailure,
+  onIndexSuccess,
+  onIndexFailure,
   onShowSuccess,
   onShowFailure,
   showForDeleteExpenseSuccess,
   showForDeleteExpenseFailure,
-  onIndexSuccess,
-  onIndexFailure,
-  onDeleteSuccess,
-  onDeleteFailure,
   onUpdateSuccess,
   onUpdateFailure,
-  onCreateSuccess,
-  onCreateFailure
+  onDeleteSuccess,
+  onDeleteFailure
 }

@@ -1,159 +1,177 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Expense Tracker</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <head>
+    <title>Expense Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <div class="container header">
-        <div class="row">
-          <div class="col-8">
-            <h1>Expense Tracker</h1>
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div class="container header">
+      <div class="row">
+        <div class="col-8">
+          <h1>Expense Tracker</h1>
+        </div>
+        <div class="col-4 auth-buttons">
+          <!-- CHANGE PASSWORD -->
+          <button type="button" class="buttons header-buttons" data-toggle="modal" data-target="#changePasswordModal" id="change-password-modal">Change Password</button>
+          <!-- SIGN OUT-->
+          <button type="button" id="sign-out" class="buttons header-buttons">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+            
+          <!-- SIGN UP -->
+          <p class="authMessage"></p>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up</legend>
+              <input type="text" name="credentials[email]" placeholder="Email" class="forms">
+              <input type="password" name="credentials[password]" placeholder="Password" class="forms">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" class="forms">
+              <input type="submit" value="Sign Up" class="buttons">
+            </fieldset>
+          </form>
+
+          <!-- SIGN IN -->
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign In</legend>
+              <input type="text" name="credentials[email]" placeholder="Email" class="forms">
+              <input type="password" name="credentials[password]" placeholder="Password" class="forms">
+              <input type="submit" value="Sign In" class="buttons">
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid main-div">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-5 form-div">
+          
+            <!-- Enter an expense form -->
+          <div>
+            <form id="create-expense">
+              <h4>Add an Expense</h4>
+              <input type="text" name="source" placeholder="Source" id="create-source" class="forms">
+              <input type="text" name="amount" placeholder="Amount" id="create-amount" class="forms">
+              <select class="forms" id="create-category">
+                <option value="Home">Home</option>
+                <option value="Vehicle">Vehicle</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Recreation">Recreation</option>
+                <option value="Gifts">Gifts</option>
+                <option value="Communications">Communications</option>
+                <option value="Savings & Investments">Savings & Investments</option>
+              </select>
+              <input type="text" name="description" placeholder="Description" id="create-description" class="forms">
+              <input type="submit" value="Go" class="buttons">
+            </form>
           </div>
-          <div class="col-4 auth-buttons">
-            <!-- change password -->
-            <button type="button" class="buttons header-buttons" data-toggle="modal" data-target="#changePasswordModal" id="change-password-modal">Change Password</button>
-            <!-- sign out button-->
-            <button type="button" id="sign-out" class="buttons header-buttons">Sign Out</button>
+
+            <!-- Edit an expense form -->
+          <div>
+            <form id="update-expense">
+              <h4>Edit an Expense</h4>
+              <input type="text" name="id" placeholder="Expense Id" id="update-id" class="forms">
+              <input type="text" name="source" placeholder="Source" id="update-source" class="forms">
+              <input type="text" name="amount" placeholder="Amount" id="update-amount" class="forms">
+              <select class="forms" id="update-category">
+                <option value="Home">Home</option>
+                <option value="Vehicle">Vehicle</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Recreation">Recreation</option>
+                <option value="Gifts">Gifts</option>
+                <option value="Communications">Communications</option>
+                <option value="Savings & Investments">Savings & Investments</option>
+              </select>
+              <input type="text" name="description" placeholder="Description" id="update-description" class="forms">
+              <input type="submit" value="Go" class="buttons">
+            </form>
+          </div>
+
+            <!-- Delete an expense form -->
+          <div id="delete-expense">
+            <h4>Remove an Expense</h4>
+            <input type="text" placeholder="Expense Id" id="delete-id" class="forms">
+            <button class="buttons" data-toggle="modal" id="delete-expense-button" data-target="#deleteExpenseModal">Go</button>
+          </div>
+
+          <!-- SEE AN EXPENSE FORM -->
+          <div>
+            <form id="show-expense">
+              <h4>See an Expense</h4>
+              <input type="text" name="id" placeholder="Expense Id" id="show-id" class="forms">
+              <input type="submit" value="Go" class="buttons">
+            </form>
+          </div>
+
+          <!-- SEE ALL EXPENSES BUTTON -->
+          <div>
+            <form id="index-expense">
+              <h4>See all Expenses</h4>
+              <input type="submit" value="Show All Expenses" class="buttons" id="button-index-expense">
+            </form>
+          </div>   
+        </div>
+
+        <!-- EXPENSE TABLE -->
+        <div id="table-container" class="col-sm-12 col-md-8 col-lg-7">
+          <div id="results"></div>
+        </div>
+
+      </div> 
+    </div> 
+
+    <!-- CHANGE PASSWORD MODAL -->
+    <div class="modal" id="changePasswordModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Change Password</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+              <fieldset>
+                <input type="password" name="passwords[old]" placeholder="Old password" class="forms">
+                <input type="password" name="passwords[new]" placeholder="New password" class="forms">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm New Password" class="forms">
+                <input type="submit" value="Change password" class="buttons">
+              </fieldset>
+            </form>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-              <!-- sign up form -->
-            <p class="authMessage"></p>
-            <form id="sign-up">
-              <fieldset>
-                <legend>Sign Up</legend>
-                <input type="text" name="credentials[email]" placeholder="Email" class="forms">
-                <input type="password" name="credentials[password]" placeholder="Password" class="forms">
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" class="forms">
-                <input type="submit" value="Sign Up" class="buttons">
-              </fieldset>
-            </form>
-            <!-- sign in form -->
-            <form id="sign-in">
-              <fieldset>
-                <legend>Sign In</legend>
-                <input type="text" name="credentials[email]" placeholder="Email" class="forms">
-                <input type="password" name="credentials[password]" placeholder="Password" class="forms">
-                <input type="submit" value="Sign In" class="buttons">
-              </fieldset>
-            </form>
-              <!-- change password modal -->
-            <div class="modal" id="changePasswordModal">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Change Password</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <div class="modal-body">
-                    <form id="change-password">
-                      <fieldset>
-                        <input type="password" name="passwords[old]" placeholder="Old password" class="forms">
-                        <input type="password" name="passwords[new]" placeholder="New password" class="forms">
-                        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm New Password" class="forms">
-                        <input type="submit" value="Change password" class="buttons">
-                      </fieldset>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+    </div>
+
+    <!-- DELETE EXPENSE CONFIRMATION MODAL -->
+    <div class="modal" id="deleteExpenseModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Confirmation</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
+          <div class="modal-body" id="delete-expense-modal"></div>
         </div>
       </div>
-      <div class="container-fluid main-div">
-        <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-5 form-div">
-              <!-- Enter an expense form -->
-            <div>
-              <form id="create-expense">
-                <h4>Add an Expense</h4>
-                <input type="text" name="source" placeholder="Source" id="create-source" class="forms">
-                <input type="text" name="amount" placeholder="Amount" id="create-amount" class="forms">
-                <select class="forms" id="create-category">
-                  <option value="Home">Home</option>
-                  <option value="Vehicle">Vehicle</option>
-                  <option value="Grocery">Grocery</option>
-                  <option value="Recreation">Recreation</option>
-                  <option value="Gifts">Gifts</option>
-                  <option value="Communications">Communications</option>
-                  <option value="Savings & Investments">Savings & Investments</option>
-                </select>
-                <!-- <input type="text" name="category" placeholder="Category" id="create-category" class="forms"> -->
-                <input type="text" name="description" placeholder="Description" id="create-description" class="forms">
-                <input type="submit" value="Go" class="buttons">
-              </form>
-            </div>
-              <!-- Edit an expense form -->
-            <div>
-              <form id="update-expense">
-                <h4>Edit an Expense</h4>
-                <input type="text" name="id" placeholder="Expense Id" id="update-id" class="forms">
-                <input type="text" name="source" placeholder="Source" id="update-source" class="forms">
-                <input type="text" name="amount" placeholder="Amount" id="update-amount" class="forms">
-                <select class="forms" id="update-category">
-                  <option value="Home">Home</option>
-                  <option value="Vehicle">Vehicle</option>
-                  <option value="Grocery">Grocery</option>
-                  <option value="Recreation">Recreation</option>
-                  <option value="Gifts">Gifts</option>
-                  <option value="Communications">Communications</option>
-                  <option value="Savings & Investments">Savings & Investments</option>
-                </select>
-                <!-- <input type="text" name="category" placeholder="Category" id="update-category" class="forms"> -->
-                <input type="text" name="description" placeholder="Description" id="update-description" class="forms">
-                <input type="submit" value="Go" class="buttons">
-              </form>
-            </div>
-              <!-- Delete an expense form -->
-            <div id="delete-expense">
-              <h4>Remove an Expense</h4>
-              <input type="text" placeholder="Expense Id" id="delete-id" class="forms">
-              <button class="buttons" data-toggle="modal" id="delete-expense-button" data-target="#deleteExpenseModal">Go</button>
-              <div class="modal" id="deleteExpenseModal">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title">Confirmation</h4>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body" id="delete-expense-modal"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <!-- see an expense form -->
-            <div>
-              <form id="show-expense">
-                <h4>See an Expense</h4>
-                <input type="text" name="id" placeholder="Expense Id" id="show-id" class="forms">
-                <input type="submit" value="Go" class="buttons">
-              </form>
-            </div>
-              <!-- see all expenses button -->
-            <div>
-              <form id="index-expense">
-                <h4>See all Expenses</h4>
-                <input type="submit" value="Show All Expenses" class="buttons" id="button-index-expense">
-              </form>
-            </div>   
-          </div>
-          <div id="table-container" class="col-sm-12 col-md-8 col-lg-7">
-            <!-- Display table div -->
-            <div id="results"></div>
-          </div>
-        </div> 
-      </div>  
-    </body>
+    </div>
+
+  </body>
 </html>
