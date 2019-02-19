@@ -60,9 +60,15 @@ const onUpdateExpense = (event) => {
     category: $('#update-category').val(),
     description: $('#update-description').val()
   }
+  for (const prop in updateExpenseData) {
+    if (updateExpenseData[prop] === '') {
+      delete updateExpenseData[prop]
+    }
+  }
   const data = {
     expense: updateExpenseData
   }
+  console.log(data)
   api.updateExpense(data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
